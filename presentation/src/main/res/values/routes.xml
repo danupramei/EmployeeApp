@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="list_employee_route">android-app://employee.app/list_employee</string>
+    <string name="detail_employee_route">android-app://employee.app/detail_employee</string>
+</resources>
