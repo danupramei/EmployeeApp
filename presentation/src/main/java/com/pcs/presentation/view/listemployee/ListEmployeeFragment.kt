@@ -2,10 +2,8 @@ package com.pcs.presentation.view.listemployee
 
 import android.os.Bundle
 import android.view.View
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
-import com.pcs.presentation.R
 import com.pcs.presentation.adapter.EmployeeAdapter
 import com.pcs.presentation.consta.Const
 import com.pcs.presentation.databinding.FragmentListEmployeeBinding
@@ -20,6 +18,7 @@ import com.pcs.shared.extent.dpToPixels
 import com.pcs.shared.extent.gone
 import com.pcs.shared.extent.invisible
 import com.pcs.shared.extent.navigate
+import com.pcs.shared.extent.showToastMessage
 import com.pcs.shared.extent.verticalLinearLayoutManager
 import com.pcs.shared.extent.visible
 import com.pcs.shared.utils.CustomMarginDecoration
@@ -66,6 +65,7 @@ class ListEmployeeFragment :
                 }
                 swipeListEmployee.isRefreshing = false
             }.onError {
+                showToastMessage(it.orEmpty())
                 rcListEmployee.gone()
                 swipeListEmployee.isRefreshing = false
             }.onEmpty {

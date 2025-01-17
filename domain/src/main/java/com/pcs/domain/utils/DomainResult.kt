@@ -1,7 +1,5 @@
 package com.pcs.domain.utils
 
-const val RESPONSE_ERROR_CONST = 901
-
 sealed class DomainResult<out T> {
     data class Success<T>(val data: T) : DomainResult<T>()
     data class EmptyState(val message: String?, val responseStatusCode: Int? = 0) :
